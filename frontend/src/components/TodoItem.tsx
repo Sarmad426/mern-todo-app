@@ -17,8 +17,9 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onToggle }) => {
         type="checkbox"
         checked={todo.completed}
         onChange={() => onToggle(todo._id, !todo.completed)}
+        id={todo._id}
       />
-      <span>{todo.title}</span>
+      <label htmlFor={todo._id}>{todo.title}</label>
       <button onClick={() => onDelete(todo._id)}>Delete</button>
     </div>
   );
