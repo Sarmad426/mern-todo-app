@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/Todolist";
+import { ITodo } from "./types/types";
 
 const App: React.FC = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<ITodo[]>([]);
 
   const handleAdd = (todo: {
     _id: string;
@@ -14,8 +15,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className="flex flex-col items-center justify-center w-screen">
+      <h1 className="text-4xl font-bold">Todo List</h1>
       <AddTodo onAdd={handleAdd} />
       <TodoList />
     </div>

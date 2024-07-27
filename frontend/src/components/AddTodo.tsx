@@ -14,16 +14,18 @@ const AddTodo: React.FC<AddTodoProps> = ({ onAdd }) => {
       const newTodo = await createTodo(title);
       onAdd(newTodo);
       setTitle("");
+      window.location.reload();
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="w-full" onSubmit={handleSubmit}>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Add a new todo"
+        className="outline outline-1 rounded-md m-6 p-3 md:w-2/4 sm:3/4 w-full"
       />
       <button type="submit">Add Todo</button>
     </form>
