@@ -33,7 +33,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ onAdd }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Add a new todo"
-        className="outline outline-2 rounded-md my-4 p-2 w-5/6 focus:outline-teal-400 focus:shadow-sm focus:shadow-teal-400"
+        className="outline outline-2 rounded-md my-4 p-2 w-5/6 focus:outline-teal-400 focus:shadow-sm focus:shadow-teal-400 bg-transparent"
       />
       <button
         type="submit"

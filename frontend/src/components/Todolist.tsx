@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchTodos, deleteTodo, updateTodo } from "../actions/TodoActions";
 import TodoItem from "./TodoItem";
 import { ITodo } from "../types/types";
+import { AnimatePresence } from "framer-motion";
 
 const TodoList: React.FC = () => {
   const [todos, setTodos] = useState<ITodo[]>();
@@ -26,15 +27,17 @@ const TodoList: React.FC = () => {
 
   return (
     <div>
-      {todos?.map((todo) => (
-        <TodoItem
-          key={todo._id}
-          todo={todo}
-          onDelete={handleDelete}
-          onToggle={handleToggle}
-        />
-      ))}
-      <hr className="mt-4" />
+      <AnimatePresence>
+        {todos?.map((todo) => (
+          <TodoItem
+            key={todo._id}
+            todo={todo}
+            onDelete={handleDelete}
+            onToggle={handleToggle}
+          />
+        ))}
+      </AnimatePresence>
+      {todos?.length > 0 && <hr className="mt-4" />}
     </div>
   );
 };
