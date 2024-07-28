@@ -4,6 +4,7 @@ import { TodoItemProps } from "../types/types";
 import { Trash } from "lucide-react";
 
 import { motion } from "framer-motion";
+import { easeInOut } from "framer-motion/dom";
 
 const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onToggle }) => {
   return (
@@ -11,7 +12,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onToggle }) => {
       className="border flex items-center justify-between w-full p-2 mt-2 rounded-md"
       initial={{
         opacity: 0,
-        x: 25,
+        x: 50,
       }}
       animate={{
         opacity: 1,
@@ -19,7 +20,11 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onToggle }) => {
       }}
       exit={{
         opacity: 0,
-        x: 25,
+        x: 50,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: easeInOut,
       }}
     >
       <div className="ml-3">
