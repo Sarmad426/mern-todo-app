@@ -18,9 +18,9 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen dark:bg-gray-800">
       <ThemeSwitcher />
-      <div className="w-full max-w-md p-8 bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-lg shadow-md">
+      <div className="w-full max-w-md p-8 bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-white rounded-lg shadow-md">
         <div className="text-center mb-4">
           <h1 className="text-4xl font-bold my-2 text-center">Todo List</h1>
           <p className="text-gray-400">Make yourself productive</p>
