@@ -37,7 +37,7 @@ const TodoList: React.FC = () => {
           />
         ))}
       </AnimatePresence>
-      {todos?.length > 0 && <hr className="mt-4" />}
+      {todos && todos?.length > 0 && <hr className="mt-4" />}
     </div>
   );
 };
