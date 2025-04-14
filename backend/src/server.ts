@@ -22,4 +22,4 @@ mongoose.connect(process.env.DATABASE_URL!)
 
 app.use('/api/todos', todos);
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port http://localhost:${port}`));
